@@ -178,16 +178,16 @@ if userge.has_bot:
             except BadRequest:
                 pass
             ping = "𝗣𝗶𝗻𝗴:  🏓  {} sec\n"
-        alive_s = "➕ 𝗘𝘅𝘁𝗿𝗮 𝗣𝗹𝘂𝗴𝗶𝗻𝘀 : {}\n".format(
+        alive_s = "➕ Pro Plugins : {}\n".format(
             _parse_arg(Config.LOAD_UNOFFICIAL_PLUGINS)
         )
-        alive_s += f"👥 𝗦𝘂𝗱𝗼 : {_parse_arg(Config.SUDO_ENABLED)}\n"
-        alive_s += f"🚨 𝗔𝗻𝘁𝗶𝘀𝗽𝗮𝗺 : {_parse_arg(Config.ANTISPAM_SENTRY)}\n"
+        alive_s += f"⚜️ Dev User : {_parse_arg(Config.SUDO_ENABLED)}\n"
+        alive_s += f"🪛 Antivirus : {_parse_arg(Config.ANTISPAM_SENTRY)}\n"
         if Config.HEROKU_APP and Config.RUN_DYNO_SAVER:
-            alive_s += "⛽️ 𝗗𝘆𝗻𝗼 𝗦𝗮𝘃𝗲𝗿 :  ✅ 𝙴𝚗𝚊𝚋𝚕𝚎𝚍\n"
-        alive_s += f"💬 𝗕𝗼𝘁 𝗙𝗼𝗿𝘄𝗮𝗿𝗱𝘀 : {_parse_arg(Config.BOT_FORWARDS)}\n"
-        alive_s += f"🛡 𝗣𝗠 𝗚𝘂𝗮𝗿𝗱 : {_parse_arg(not Config.ALLOW_ALL_PMS)}\n"
-        alive_s += f"📝 𝗣𝗠 𝗟𝗼𝗴𝗴𝗲𝗿 : {_parse_arg(Config.PM_LOGGING)}"
+            alive_s += "🔐 Safe Mode :  ✅ 𝙴𝚗𝚊𝚋𝚕𝚎𝚍\n"
+        alive_s += f"💬 Godzilla inbox : {_parse_arg(Config.BOT_FORWARDS)}\n"
+        alive_s += f"🛡 Inbox Protection : {_parse_arg(not Config.ALLOW_ALL_PMS)}\n"
+        alive_s += f"📝 Inbox Info : {_parse_arg(Config.PM_LOGGING)}"
         if allow:
             end = datetime.now()
             m_s = (end - start).microseconds / 1000
@@ -229,9 +229,9 @@ class Bot_Alive:
         alive_info_ = f"""
 <a href="https://telegram.dog/x_xtests"><b>USERGE-X</a> is Up and Running.</b>
 
-  🐍   <b>Python :</b>    <code>v{versions.__python_version__}</code>
-  🔥   <b>Pyrogram :</b>    <code>v{versions.__pyro_version__}</code>
-  🧬   <b>𝑿 :</b>    <code>v{get_version()}</code>
+  ♨️   <b>Python :</b>    <code>v{versions.__python_version__}</code>
+  ☣️   <b>Pyrogram :</b>    <code>v{versions.__pyro_version__}</code>
+  ⚜️   <b>𝑿 :</b>    <code>v{get_version()}</code>
 
 <b>{Bot_Alive._get_mode()}</b>    <code>|</code>    🕔  <b>{userge.uptime}</b>
 """
@@ -249,20 +249,20 @@ class Bot_Alive:
     def alive_buttons() -> InlineKeyboardMarkup:
         buttons = [
             [
-                InlineKeyboardButton(text="🔧  SETTINGS", callback_data="settings_btn"),
-                InlineKeyboardButton(text="⚡  REPO", url=Config.UPSTREAM_REPO),
-            ]
+                InlineKeyboardButton(text="♨️  Plugins ♨️", callback_data="settings_btn"),
+                InlineKeyboardButton(text="©️  Chat ❇️", url=Config.UPSTREAM_REPO),
+            
         ]
         return InlineKeyboardMarkup(buttons)
 
     @staticmethod
     def alive_default_imgs() -> str:
         alive_imgs = [
-            "https://telegra.ph/file/11123ef7dff2f1e19e79d.jpg",
-            "https://i.imgur.com/uzKdTXG.jpg",
-            "https://telegra.ph/file/6ecab390e4974c74c3764.png",
-            "https://telegra.ph/file/995c75983a6c0e4499b55.png",
-            "https://telegra.ph/file/86cc25c78ad667ca5e691.png",
+            "https://telegra.ph/file/34044974cd5c6be5f9346.jpg",
+            "https://telegra.ph/file/34044974cd5c6be5f9346.jpg",
+            "https://telegra.ph/file/34044974cd5c6be5f9346.jpg",
+            "https://telegra.ph/file/34044974cd5c6be5f9346.jpg",
+            "https://telegra.ph/file/34044974cd5c6be5f9346.jpg",
         ]
         return rand_array(alive_imgs)
 
